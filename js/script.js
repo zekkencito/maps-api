@@ -88,7 +88,6 @@ async function findPlaces(searchText) {
     //OBTENER Más datos: https://developers.google.com/maps/documentation/places/web-service/data-fields?hl=en
     fields: [
         "displayName", "location", "businessStatus", "rating", "photos", "formattedAddress",
-       //"nationalPhoneNumber","priceLevel","reviews"
     ],
     //includedType: "restaurant",
     locationBias: center,
