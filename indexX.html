@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Restaurantes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="#">MAPS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#" data-search="Restaurantes, Tacos, Comida">Restaurante</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-search="Cafetería, Café">Cafeterías</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-search="Gasolinera">Gasolineras</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-search="Hotel, Motel">Hoteles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-search="Tienda, Supermercado, Abarrotes">Tiendas</a></li>
+                </ul>
+                <img src="https://testingbot.com/free-online-tools/random-avatar/300" class="rounded-circle" alt="user" width="30px">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Section -->
+    <div class="search-section">
+        
+        <!-- Sidebar -->
+        <aside>
+            <div>
+                <h4 class="fw-semibold mb-3">¿A dónde quieres ir?</h4>
+
+                <div class="input-group mb-3">
+                    <input type="text" value="Nuevo Casas Grandes" class="form-control" placeholder="Ciudad..." id="location-input">
+                    <button class="btn btn-primary" id="search-btn"><i class="fa fa-search"></i></button>
+                </div>
+                <div class="mb-3 d-flex flex-wrap gap-2">
+                    <button id="sort-rating" class="btn btn-outline-warning filter-btn"><i class="fa fa-star"></i> Mejor Valorados</button>
+                    <button id="sort-reviews" class="btn btn-outline-info filter-btn"><i class="fa fa-comment"></i> Más Comentados</button>
+                </div>
+
+                <div class="mb-4">
+                    <label for="radius-slider" class="form-label">Distancia del centro: <b id="radius-value">5000</b> m</label>
+                    <input type="range" class="form-range" min="500" max="20000" step="500" value="5000" id="radius-slider">
+                </div>
+
+            </div>
+            
+        <!-- Restaurant Cards -->
+            <div id="restaurants-list">
+                <p class="text-center text-muted mt-4">Buscando lugares...</p>
+            </div>
+        </aside>
+        <!-- Map -->
+        <div class="map-wrapper">
+            <div id="map" class="map-container"></div>
+        </div>
+    </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./js/script.js"></script>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFEx2Le9SgzZ45qJWC1bGo7OH3x11_9dg&loading=async&libraries=places&callback=initMap">
+  </script>
+</body>
+</html>
